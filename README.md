@@ -21,3 +21,14 @@ EOF
 EOF
 # opus-python
 # opus-python
+
+
+## Android / Termux
+
+The installed `opus_tool` executable currently requires a manual permission fix:
+
+```bash
+chmod +x "$(python -c 'import importlib.resources; print(importlib.resources.files("opus").joinpath("bin/opus_tool"))')"
+```
+
+Known issue: the wheel installation does not preserve the executable permission.
